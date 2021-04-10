@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Котики</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+  	<script type="text/x-template" id="main">
+      <div>
+		<header class="header">
+			<ul class="menu">
+				<li class="menu__list1"  :class="{menu__list_active : index}">
+					<a href="index.html" class="menu__link" @click.prevent="index = true">Все котики</a>
+				</li>
+				<li class="menu__list2" :class="{menu__list_active : !index}">
+					<a href="like_cats.html" class="menu__link"  @click.prevent="index = false">Любимые котики</a>
+				</li>
+			</ul>
+		</header>
+		<div v-if="index">
+			<article class="all_cats">
+				<div class="all_cats-box">
+					<div class="cat" v-for="cat in allCats">
+						<img class="cat__img" :src="cat.url" alt="cat">
+						<a href="#" @click.prevent="like(cat)">
+							<span class="like stroke-heart"></span>
+						</a>
+					</div>
+				</div>
+			</article>
+		</div>
+      	 <div v-else>
+			 <article class="all_cats">
+				 <div class="all_cats-box">
+					 <div class="cat"  v-for="cat in likeCats">
+						<img class="cat__img" :src="cat.url" alt="cat">
+					 	<a href="#" @click.prevent="disLike(cat)">
+						 	<span class=" like filled-heart"></span>
+					 	</a>
+					 </div>
+				 </div>
+			 </article>
+      	 </div>
+      </div>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
