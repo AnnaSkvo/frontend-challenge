@@ -43,7 +43,6 @@ a {
   width: 120px;
   height: 64px;
   background: #2196f3;
-  padding-top: 23px;
   display: inline-block;
 }
 
@@ -55,7 +54,6 @@ a {
   width: 173px;
   height: 64px;
   background: #2196f3;
-  padding-top: 23px;
   display: inline-block;
 }
 
@@ -71,6 +69,7 @@ a {
   letter-spacing: 0.25px;
   color: #ffffff;
   margin-left: 23px;
+  padding-top: 23px;
 }
 
 .all_cats {
